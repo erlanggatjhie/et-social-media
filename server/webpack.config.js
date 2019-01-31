@@ -5,17 +5,18 @@ module.exports = {
     filename: "bundle.js",
     path: __dirname + "/dist"
   },
-
-  devtool: "source-map",
-
-  resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+  node: {
+    fs: "empty",
+    net: "empty"
   },
-
+  devtool: "source-map",
+  resolve: {
+    extensions: [".mjs", ".ts", ".tsx", ".js", ".json"]
+  },
   module: {
-    rules: [
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
-    ]
+    rules: [{ test: /\.tsx?$/, loader: "awesome-typescript-loader" }]
+  },
+  externals: {
+    express: "express"
   }
 };
