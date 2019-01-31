@@ -4,9 +4,10 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "target": "es2018",
-    "lib": ["es2018", "dom", "esnext"]
+    "lib": ["esnext"]
   },
   "include": ["./src/**/*"]
 }
